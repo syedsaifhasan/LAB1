@@ -1,0 +1,59 @@
+void display(int array[2][2])
+{
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			cout << array[i][j] << "     ";
+		}
+		cout << endl;
+	}
+	cout << endl;
+}
+
+void multiply(int A[2][2], int B[2][2])
+{
+	int row=0, col=0, result[2][2], sum=0;
+	while (row < 2)
+	{
+		col = 0;
+		while (col < 2)
+		{
+			int temp = 0;
+			while (temp < 2)
+			{
+				sum += ((A[row][temp])*(B[temp][col]));
+				temp++;
+			}
+			result[row][col] = sum;
+			col++;
+		}
+		row++;
+	}
+
+	display(result);
+}
+
+
+
+void initialize(int array[2][2])
+{
+	for (int i = 0; i < 2;i++)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			array[i][j] = rand();
+		}
+	}
+	display(array);
+}
+
+int main()
+{
+	int A[2][2], B[2][2];
+	initialize(A);
+	initialize(B);
+	multiply(A, B);
+
+	system("pause");
+}
