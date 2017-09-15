@@ -1,0 +1,24 @@
+int strassen_multiply(int A[2][2], int B[2][2], int a, int b)
+{
+	return a*b;
+
+	int p1= strassen_multiply(A, B, A[2-2][2-2] + A[2-1][2-1], B[2-2][2-1]);
+	int p2= strassen_multiply(A, B, A[2-1][2-2] + A[2-1][2-1], B[2-2][2-2]);
+	int p3= strassen_multiply(A, B, A[2-2][2-2], B[2-2][2-1] - B[2-1][2-1]);
+	int p4= strassen_multiply(A, B, A[2-1][2-1], B[2-1][2-2] - B[2-2][2-2]);
+	int p5= strassen_multiply(A, B, A[2-2][2-2]+A[2-2][2-1], B[2-1][2-1]);
+	int p6= strassen_multiply(A, B, A[2-1][2-2] - A[2-2][2-2], B[2-2][2-2] + B[2-2][2-1]);
+	int p7= strassen_multiply(A, B, A[2-2][2-1] - A[2-1][2-1], B[2-1][2-2] + B[2-1][2-1]);
+
+	int a=
+}
+
+int main()
+{
+	int A[2][2], B[2][2];
+	initialize(A);
+	initialize(B);
+	strassen_multiply(A, B, 0, 0);
+
+	system("pause");
+}
